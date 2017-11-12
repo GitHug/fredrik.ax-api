@@ -1,0 +1,15 @@
+{
+  "name": "fredrik.ax-api",
+  "version": "1.0.0",
+  "description": "Backend for fredrik.ax",
+  "main": "index.js",
+  "repository": "https://github.com/GitHug/fredrik.ax-api.git",
+  "author": "Fredrik Mäkilä <fredrik.makila@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "nodemon": "^1.12.1"
+  },
+  "dependencies": {
+    "express": "^4.16.2"
+  }
+}
