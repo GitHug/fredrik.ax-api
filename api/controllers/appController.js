@@ -5,6 +5,5 @@ exports.root = (req, res) => {
 }
 
 exports.login = (req, res) => {
-    console.log('login');
     res.json({ message: 'Hello login' });
 }

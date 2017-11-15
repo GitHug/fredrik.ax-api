@@ -4,7 +4,9 @@ port = process.env.PORT || 1337,
 bodyParser = require('body-parser');
 const path = require('path');
 const expressValidator = require('express-validator');
+const routes = require('./api/routes/appRoutes'); 
 
+// CORS headers
 app.use(function(req, res, next) {
     res.header("Access-Control-Allow-Origin", '*');
     res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS');
@@ -13,6 +15,7 @@ app.use(function(req, res, next) {
     next();
 });
 
+// Respond 200 on OPTIONS
 app.options("/*", function(req, res, next){
     res.sendStatus(200);
 });
@@ -20,12 +23,12 @@ app.options("/*", function(req, res, next){
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-var routes = require('./api/routes/appRoutes'); //importing route
+//register the routes
+routes(app); 
 
-routes(app); //register the route
-
+// Fallback if route does not exist
 app.use(function(req, res) {
-    res.status(404).send({url: req.originalUrl + ' not found'})
+    res.sendStatus(404).send({url: req.originalUrl + ' not found'})
 });
 
 app.listen(port);
