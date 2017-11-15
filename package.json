@@ -6,6 +6,9 @@
     "node": "8.9.x"
   },
   "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js"
+  },
   "repository": "https://github.com/GitHug/fredrik.ax-api.git",
   "author": "Fredrik Mäkilä <fredrik.makila@gmail.com>",
   "license": "MIT",
