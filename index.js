@@ -28,9 +28,8 @@ routes(app);
 
 // Fallback if route does not exist
 app.use(function(req, res) {
-    res.sendStatus(404).send({url: req.originalUrl + ' not found'})
+    res.status(404).json({url: req.originalUrl + ' not found'})
 });
-
 app.listen(port);
 
 console.log('RESTful API server started on: ' + port);

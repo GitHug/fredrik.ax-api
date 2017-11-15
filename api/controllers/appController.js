@@ -5,5 +5,5 @@ exports.root = (req, res) => {
 }
 
 exports.login = (req, res) => {
-    res.json({ message: 'Hello login' });
+    res.status(401).send({status: 401, msg: 'Login denied'});
 }
