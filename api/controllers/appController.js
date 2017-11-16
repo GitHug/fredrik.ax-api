@@ -5,5 +5,5 @@ exports.root = (req, res) => {
 }
 
 exports.login = (req, res) => {
-    res.status(401).send({status: 401, msg: 'Login denied'});
+    res.status(401).send({status: 401, msg: 'Login failed due to incorrect credentials'});
 }
